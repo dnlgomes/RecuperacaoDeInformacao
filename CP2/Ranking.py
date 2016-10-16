@@ -23,7 +23,7 @@ for key in textos:
 numero_documentos = len(textos)
 new_indice = {}
 for key in dicionario:
-    indice = u''.join(key.lower().decode())
+    indice = u''.join(key.lower().decode())# u''.join -> para nao dar problemas com palavras acentuadas/caracteres especiais.
     idf = log( (numero_documentos + 1.0) / len(dicionario[indice]) )
     new_indice[key] = [idf, dicionario[indice]]
 

@@ -21,10 +21,10 @@ def tratar(text):
     text = re.sub(r'\s+', ' ', text).strip()# substituir espaços em branco consecutivos por um unico espaco
     return text
 
-
+#retorna um dicionario, com chave igual ao numero do documento, e os valores iguais ao texto do documento (ja tratados pela funcao tratar acima)
 def getTextoAsDictionary():
     dicionario = {}
-    tree = ET.parse('ptwiki-v2.trec')
+    tree = ET.parse('../ptwiki-v2.trec')
     root = tree.getroot()
 
     for docno, texto in zip(root.iter('DOCNO'), root.iter('P')):
